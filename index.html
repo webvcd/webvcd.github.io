@@ -396,10 +396,10 @@
 </section>
 </body>
 <!--vue 前端框架-->
-<script src="https://www.22g.top/m3u8/vue.js"></script>
-<script src="https://www.22g.top/m3u8/aes-decryptor.js"></script>
-<script src="https://www.22g.top/m3u8/mux-mp4.js"></script>
-<script src="https://www.22g.top/m3u8/stream-saver.js"></script>
+<script src="https://www.22g.top/m3u8dow/vue.js"></script>
+<script src="https://www.22g.top/m3u8dow/aes-decryptor.js"></script>
+<script src="https://www.22g.top/m3u8dow/mux-mp4.js"></script>
+<script src="https://www.22g.top/m3u8dow/stream-saver.js"></script>
 
 <script>
 // script注入
@@ -563,7 +563,7 @@ new Vue({
       // 当前协议不一致，切换协议
       if (location.href.indexOf('blog.luckly-mjw.cn') > -1 && this.url.indexOf(location.protocol) === -1) {
         //alert('当前协议不一致，跳转至正确页面重新下载')
-        location.href = `${this.url.split(':')[0]}://www.22g.top/m3u8/index.html?source=${this.url}`
+        location.href = `${this.url.split(':')[0]}://www.22g.top/m3u8dow/index.html?source=${this.url}`
         return
       }
 
@@ -905,19 +905,19 @@ new Vue({
 
           // 加载 ASE 解密
           let $ase = document.createElement('script')
-          $ase.src = 'https://www.22g.top/m3u8/aes-decryptor.js'
+          $ase.src = 'https://www.22g.top/m3u8dow/aes-decryptor.js'
 
           // 加载 mp4 转码
           let $mp4 = document.createElement('script')
-          $mp4.src = 'https://www.22g.top/m3u8/mux-mp4.js'
+          $mp4.src = 'https://www.22g.top/m3u8dow/mux-mp4.js'
 
           // 加载 vue
           let $vue = document.createElement('script')
-          $vue.src = 'https://www.22g.top/m3u8/vue.js'
+          $vue.src = 'https://www.22g.top/m3u8dow/vue.js'
 
           // 加载 stream 流式下载器
           let $streamSaver = document.createElement('script')
-          $streamSaver.src = 'https://www.22g.top/m3u8/stream-saver.js'
+          $streamSaver.src = 'https://www.22g.top/m3u8dow/stream-saver.js'
 
           // 监听 vue 加载完成，执行业务代码
           $vue.addEventListener('load', () => {${script}})
