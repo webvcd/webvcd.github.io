@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>空气加密器</title>
+    <link rel="icon" href="src/favicon.ico" type="image/x-icon">
+    <style>
+        :root {
+            --primary-color: #3eaf7c;
+            --background-color: #f3f4f5;
+            --text-color: #2c3e50;
+            --border-color: #eaecef;
+        }
+
+        body,
+        html {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            height: 100%;
+            font-size: 16px;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: 1.8rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .main-content {
+            overflow-y: scroll;
+            /* 或使用 auto，根据具体需求 */
+            -ms-overflow-style: none;
+            /* IE和Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        .main-content::-webkit-scrollbar {
+            /* Chrome Safari */
+            display: none;
+            /* Safari 和 Chrome */
+        }
+
+        h1 {
+            justify-content: center;
+            /* 水平居中 */
+            align-items: center;
+            /* 垂直居中 */
+            display: flex;
+            align-items: center;
+            /*让图标和文本垂直居中*/
+            font-size: 2.5rem;
+        }
+
+        .logo {
+            width: 45px;
+            /* 图标宽度 */
+            height: 45px;
+            /* 图标高度 */
+            margin-right: 1px;
+            /* 图标与文字之间的间距 */
+        }
+
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-description,
+        .converters {
+            background-color: #ffffff;
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-description {
+            text-align: justify;
+            font-size: 1.1rem;
+        }
+
+        .github-links {
+            display: flex;
+            /* 使用Flexbox布局 */
+            justify-content: flex-start;
+            /* 向左对齐元素，并减少空白 */
+            gap: 4rem;
+            /* 设置元素之间的间距，可根据需要调整 */
+            margin-top: 1rem;
+            /* 在顶部添加间距 */
+        }
+
+        .github-links p {
+            margin: 0;
+            /* 去除段落的默认间距 */
+        }
+
+        img {
+            display: inline-block;
+            /* 设置为 inline-block 以处理间距 */
+            vertical-align: middle;
+            /* 垂直对齐 */
+            margin: 0;
+            /* 去除外边距 */
+            padding: 0;
+            /* 去除内边距 */
+        }
+
+        a {
+            text-decoration: none;
+            /* 去掉链接的下划线 */
+            border: none;
+            /* 确保没有边框 */
+        }
+
+
+        .converters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .converter {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 145px;
+            /* 统一文本框高度 */
+            margin-bottom: 1rem;
+            /* 文本框与下方元素的间距 */
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 0.8rem;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin: 0 0 1rem 0;
+            /* 设置底部间距 */
+            justify-content: center;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            height: 48px;
+            /* 设置按钮高度 */
+            font-size: 1.1rem;
+            text-align: center;
+            display: inline-block;
+
+            button:hover {
+                background-color: #2c8f5f;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .converters {
+                flex-direction: column;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        .copyright {
+            text-align: center;
+            /* margin-top: 1rem; */
+            margin-bottom: 3.5rem;
+            /* padding: 0 0; */
+            position: relative;
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main-content">
+            <h1><img src="src/logo.png" alt="图标" class="logo">空气加密器</h1>
+            <div class="project-description">
+                <p><strong>空气加密器</strong>是一个简单的在线工具，可以将文本转换为"空"和"气"组成的字符串，亦可解密回原始文本。本项目完全本地运行，并不会上传你所输入的任何信息。</p>
+                <p><strong>注意：这种加密方式仅用于娱乐，不适用于需要高度安全性的场景。</strong></p>
+                <div class="github-links">
+                   
+                </div>
+              
+            </div>
+
+            <div class="converters">
+                <div class="converter">
+                    <h2>加密</h2>
+                    <textarea id="inputText" placeholder="输入要加密的文本（支持中文）"></textarea>
+                    <div class="button-group">
+                        <button onclick="convertToBinary()">加密</button>
+                        <button onclick="copyText('outputBinary')">复制结果</button>
+                    </div>
+                    <textarea id="outputBinary" readonly placeholder="加密结果将显示在这里"></textarea>
+                </div>
+
+                <div class="converter">
+                    <h2>解密</h2>
+                    <textarea id="inputBinary" placeholder="输入要解密的“空气”字符串"></textarea>
+                    <div class="button-group">
+                        <button onclick="convertToText()">解密</button>
+                        <button onclick="copyText('outputText')">复制结果</button>
+                    </div>
+                    <textarea id="outputText" readonly placeholder="解密结果将显示在这里"></textarea>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Copyright © 2024-Present .</p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        function convertToBinary() {
+            const input = document.getElementById('inputText').value;
+            if (!input) {
+                alert('请输入要加密的文本');
+                return;
+            }
+            const binary = [...input].map(char => char.charCodeAt(0).toString(2).padStart(16, '0')).join('');
+            document.getElementById('outputBinary').value = binary.replace(/0/g, '空').replace(/1/g, '气');
+        }
+
+        function convertToText() {
+            const input = document.getElementById('inputBinary').value;
+            if (!input) {
+                alert('请输入要解密的“空气”字符串');
+                return;
+            }
+            const binary = input.replace(/空/g, '0').replace(/气/g, '1');
+            let result = '';
+
+            for (let i = 0; i < binary.length; i += 16) {
+                const byte = binary.slice(i, i + 16);
+                if (byte.length === 16) {
+                    result += String.fromCharCode(parseInt(byte, 2));
+                }
+            }
+            document.getElementById('outputText').value = result;
+        }
+
+        function copyText(elementId) {
+            const element = document.getElementById(elementId);
+            if (!element.value) {
+                alert('没有内容可复制');
+                return;
+            }
+            element.select();
+            document.execCommand('copy');
+            alert('文本已复制到剪贴板');
+        }
+    </script>
+</body>
+
+</html>
