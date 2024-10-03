@@ -2,10 +2,6 @@
 
 学习了一段时间之后，使用原始 JS 实现的一个扫雷游戏，未使用 canvas，所以性能方面有些问题。
 
-如果感兴趣的话可以试试：[Demo](http://caijin.tech/demo/mineSweeping/index.html)
-
-## 效果图
-![demo1](https://github.com/CaiJinyc/game-mineSweepinng/blob/master/img/demo1.gif)![demo2](https://github.com/CaiJinyc/game-mineSweepinng/blob/master/img/demo2.png)![demo3](https://github.com/CaiJinyc/game-mineSweepinng/blob/master/img/demo3.png)![demo4](https://github.com/CaiJinyc/game-mineSweepinng/blob/master/img/demo4.png)
 
 ## 功能
 #### 实现的功能
